@@ -1,0 +1,10 @@
+Calculate the number of employees corresponding to each skill from the table 'employee' which is
+loaded in the Demo.
+
+create table skills(name String, skill String, exp int, country String) row format delimited fields terminated by ',' stored as textfile;
+
+load data local inpath '/home/jayant/Downloads/emp_details.txt' into table skills;
+
+select skill, count(*) from skills group by skill;
+
+
